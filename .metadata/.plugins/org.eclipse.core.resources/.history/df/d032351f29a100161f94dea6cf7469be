@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class RandomNumberQuiz {
+	
+	static int ran;
+
+	public static void main(String[] args) {
+		
+		generateRan();
+		guessingGame();
+		
+	}
+	
+	public static void generateRan() {
+		ran = (int)(Math.random() * 100);
+	}
+	
+	public static void guessingGame() {
+		Scanner in = new Scanner(System.in);
+		
+		int guess;
+		do {
+			System.out.println("Enter your guess:");
+			guess = in.nextInt();
+			if (guess > ran) System.out.println("Too high.");
+			else System.out.println("Too low.");
+		} while (guess != ran);
+		System.out.println("Correct!");
+		
+		in.close();
+	}
+
+}
