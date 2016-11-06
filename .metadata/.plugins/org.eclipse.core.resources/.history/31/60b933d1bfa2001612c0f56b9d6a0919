@@ -1,0 +1,13 @@
+
+public class CharacterDemo {
+
+	public static void main(String[] args) {
+		
+		char letter = 'b';
+		char sameLetter = 98;
+		
+		System.out.println(letter + '\n' + sameLetter);
+		
+	}
+
+}

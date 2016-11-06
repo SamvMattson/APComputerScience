@@ -1,0 +1,13 @@
+
+public class CharacterDemo {
+
+	public static void main(String[] args) {
+		
+		char letter = 'b';
+		char letter2 = 66;
+		
+		System.out.println(letter + "\n" + letter2 + "\n" + letter + 10);
+		
+	}
+
+}
