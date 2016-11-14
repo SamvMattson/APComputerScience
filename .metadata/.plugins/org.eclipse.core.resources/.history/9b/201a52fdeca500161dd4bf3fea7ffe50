@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(Integer.parseInt(Integer.toString((0x3fA6 + 0xE83A)), 16));
+
+	}
+
+}

@@ -32,6 +32,7 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+		boolean hasSize = false;
 		if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
@@ -42,20 +43,21 @@ public class Magpie2
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
-		} else if (statement.indexOf("dog") >= 0 || statement.indexOf("cat") >= 0) {
-			response = "Tell me more about your family.";
+		} else if (statement.indexOf("pets") >= 0) {
+			response = "My pets are in the cemetary";
 		} else if (statement.indexOf("krasovich") >= 0) {
-			response = "She is a wondrous teacher.";
+			response = "She is a good teacher.";
 		} else if (statement.trim().length() > 0) {
 			response = "Please say something.";
 		} else if (statement.indexOf("weather") >= 0) {
 			response = "Do you enjoy the weather we've been having.";
-		} else if (statement.indexOf("yes") >= 0) {
-			response = "I agree.";
-		}
-		else
+		} else
 		{
 			response = getRandomResponse();
+		}
+		
+		if (statement.length() > 0) {
+			hasSize = true;
 		}
 		return response;
 	}

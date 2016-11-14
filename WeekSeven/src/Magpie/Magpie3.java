@@ -31,6 +31,7 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
+		boolean hasSize = false;
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
@@ -45,11 +46,20 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		} else if (findKeyword(statement, "pets") >= 0) {
+			response = "My pets are in the cemetary";
+		} else if (findKeyword(statement, "krasovich") >= 0) {
+			response = "She is a good teacher";
 		}
 		else
 		{
 			response = getRandomResponse();
 		}
+		
+		if (statement.length() > 0) {
+			hasSize = true;
+		}
+		
 		return response;
 	}
 
@@ -143,11 +153,11 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
-		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
+		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
-
+		
 		if (whichResponse == 0)
 		{
 			response = "Interesting, tell me more.";
@@ -163,6 +173,10 @@ public class Magpie3
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		} else if (whichResponse == 4) {
+			response = "Okay then.";
+		} else if (whichResponse == 5) {
+			response = "I see, I see.";
 		}
 
 		return response;
